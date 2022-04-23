@@ -22,14 +22,14 @@ public class TextBoxTests {
         open("https://demoqa.com/text-box");
         $("#userName").setValue("Anonymous User");
         $("#userEmail").setValue("anonymous@gmail.com");
-        $("#currentAddress").setValue("5 Anonymous St., Anon City, Anon Country");
+        $("input#currentAddress").setValue("5 Anonymous St., Anon City, Anon Country");
         $("#permanentAddress").setValue(permanentAddress);
         $("#submit").click();
         $("#submit").click();
 
         $("#output #name").shouldHave(text("Anonymous User"));
         $("#output #email").shouldHave(text("anonymous@gmail.com"));
-        $("#output #currentAddress").shouldHave(text("5 Anonymous St., Anon City, Anon Country"));
+        $("#output p#currentAddress").shouldHave(text("5 Anonymous St., Anon City, Anon Country"));
         $("#output #permanentAddress").shouldHave(text(permanentAddress ));
     }
 }
